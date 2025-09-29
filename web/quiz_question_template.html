@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+    let flagged = false;
+    let submitting = false;
+
+    // Mark as "submitting" if student clicks "Next"
+    document.addEventListener("submit", function () {
+        submitting = true;
+    });
+
+    // Disqualify if they switch tab — unless it's a legit submit
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden && !flagged && !submitting) {
+            flagged = true;
+            alert("❌ You left the quiz tab. You are disqualified.");
+
+            const form = document.createElement("form");
+            form.method = "POST";
+            form.action = "/student/disqualified";
+            form.innerHTML = `
+                <input type="hidden" name="quiz" value="{{quiz}}">
+                <input type="hidden" name="score" value="0">
+                <input type="hidden" name="total" value="{{total}}">
+            `;
+            document.body.appendChild(form);
+            form.submit();
+        }
+    });
+    </script>
+
+
+</head>
+<body>
+    <h2>{{question_text}}</h2>
+    <form action="/student/next" method="post">
+        {{options_html}}
+        <input type="hidden" name="quiz" value="{{quiz}}">
+        <input type="hidden" name="index" value="{{index}}">
+        <input type="hidden" name="score" value="{{score}}">
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>

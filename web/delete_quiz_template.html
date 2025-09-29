@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Delete Quiz</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>🗑 Delete a Quiz</h2>
+    <form action="/teacher/delete_confirm" method="get">
+        <label>Select quiz to delete:</label><br><br>
+        <select name="quiz" required>
+            {{quiz_list}}
+        </select><br><br>
+        <button type="submit">Delete ➡</button>
+    </form>
+    <p><a href="/teacher">⬅ Back</a></p>
+</body>
+</html>

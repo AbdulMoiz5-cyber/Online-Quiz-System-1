@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        table { border-collapse: collapse; width: 80%; margin: auto; }
+        th, td { padding: 10px; border: 1px solid #333; text-align: center; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>📊 Your Quiz Results</h2>
+    <table>
+        <tr>
+            <th>Quiz</th>
+            <th>Score</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Cheated?</th>
+        </tr>
+        {{result_rows}}
+    </table>
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/student">⬅ Back to Dashboard</a>
+    </div>
+</body>
+</html>

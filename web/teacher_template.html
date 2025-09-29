@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Welcome, {{username}} (Teacher)</h2>
+    <form action="/teacher/create" method="get">
+        <button type="submit">➕ Create New Quiz</button>
+    </form>
+    <form action="/teacher/delete" method="get">
+        <button type="submit">🗑 Delete a Quiz</button>
+    </form>
+    <form action="/teacher/results" method="get">
+        <button type="submit">📊 View All Results</button>
+    </form>
+    <p><a href="/">⬅ Logout</a></p>
+</body>
+</html>

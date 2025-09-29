@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Student Results</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        table { width: 90%; border-collapse: collapse; margin: auto; }
+        th, td { border: 1px solid #444; padding: 10px; text-align: center; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>📊 All Student Results</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Quiz</th>
+            <th>Score</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Flagged?</th>
+        </tr>
+        {{results_table}}
+    </table>
+    <p style="text-align:center;"><a href="/teacher">⬅ Back</a></p>
+</body>
+</html>

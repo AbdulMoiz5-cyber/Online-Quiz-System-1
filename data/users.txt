@@ -1,0 +1,3 @@
+student|abdul|zzz
+student|moiz|yyy
+teacher|rayyan|xxx
